@@ -1,0 +1,136 @@
+$color-three: #F68657;
+$color-four: #F6B352;
+
+.serviceBox {
+  padding: 70px 20px 30px;
+  margin: 50px 0 110px;
+  text-align: center;
+  position: relative;
+  min-height: 350px;
+
+  .btn {
+    display: block;
+    background: $color-four;
+    color: white;
+    padding: 10px 15px;
+    margin: 10px 0px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.9);
+    transition: all 200ms ease-in-out;
+    text-decoration: none;
+    font-size: 14px !important;
+
+    &:hover {
+      background: $color-three;
+    }
+  }
+}
+
+.serviceBox:before {
+  content: "";
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  bottom: -100px;
+  left: 0;
+  -webkit-clip-path: polygon(50% 100%, 0 0, 100% 0);
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+}
+
+.serviceBox:after {
+  content: "";
+  width: 50%;
+  height: 2px;
+  background: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: all 0.3s ease 0s;
+}
+
+.serviceBox:hover:after {
+  width: 100%;
+}
+
+.serviceBox .service-icon {
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  margin: 0 auto;
+  font-size: 40px;
+  color: #fff;
+  position: absolute;
+  top: -50px;
+  left: 0;
+  right: 0;
+  transition: all 0.3s ease 0s;
+}
+
+.serviceBox:hover .service-icon {
+  transform: rotateX(360deg);
+}
+
+.serviceBox .title {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 0 0 10px 0;
+}
+
+.serviceBox .description {
+  font-size: 15px;
+  color: #fff;
+  line-height: 27px;
+  margin-bottom: 0;
+}
+
+.serviceBox.green,
+.serviceBox.green:before,
+.serviceBox.green .service-icon {
+  background: #789423;
+}
+
+.serviceBox.yellow,
+.serviceBox.yellow:before,
+.serviceBox.yellow .service-icon {
+  background: #eaf223;
+}
+
+.serviceBox.blue,
+.serviceBox.blue:before,
+.serviceBox.blue .service-icon {
+  background: #2368c7;
+}
+
+.serviceBox.red,
+.serviceBox.red:before,
+.serviceBox.red .service-icon {
+  background: #d12f2f;
+}
+
+@media only screen and (max-width:767px) {
+  .serviceBox {
+    margin: 50px 0 160px;
+  }
+}
+
+.file-upload-img {
+  box-shadow: 0px 0px 0px 1px #0000003d;
+  height: 44px;
+  border-radius: 15px;
+}
+
+#serviceNeededModal {
+  .modal-header {
+    background: #6bce22;
+    color: #f5ff00;
+  }
+
+  .btn {
+    font-size: 12px !important;
+  }
+}

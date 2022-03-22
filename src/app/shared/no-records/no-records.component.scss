@@ -1,0 +1,28 @@
+.no-records {
+    // background-color: #f2f2f2;
+    .card {
+      // background-color: #f2f2f2;
+      border: 1px solid #dcd9d9 !important;
+    }
+}
+.text-disable{
+    color: #D4D4D4;
+}
+.no-records .card {
+  height: calc(100vh - 230px);
+  min-height: 210px;
+}
+img{
+  width: 200px;
+  height: 150px;
+}
+// @media (min-width: 992px) {
+//     .no-records .card {
+//       height: calc(100vh - 240px);
+//     }
+// }
+// @media (max-width : 992px){
+//   .no-records .card{
+//     height: calc(100);
+//   }
+// }

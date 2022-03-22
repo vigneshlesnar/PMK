@@ -1,0 +1,63 @@
+$color-one: #0d8a24f0;
+$color-two: #383A3F;
+$color-three: #F68657;
+$color-four: #F6B352;
+
+.card {
+  background: $color-one;
+  box-shadow: -3px 0px 20px 2px rgb(0 0 0 / 40%);
+  border-radius: 5px;
+  width: 100%;
+  min-height: 320px;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  float: left;
+  transition: transform .5s;
+  &:hover{
+    transform : scale(1.1);
+  }
+  @media (max-width: 768px) {
+    &:first-child {
+      margin-top: 10px;
+    }
+  }
+  &:nth-child(2) {
+    padding: 50px 20px;
+    @media (max-width: 768px) {
+      margin: 10px ;
+    }
+  }
+  .title {
+    font-size: 20px;
+    color: #f5ff00;
+    min-height: 90px;
+  }
+  .icon {
+    margin: 20px 0;
+  }
+  .btn {
+    display: block;
+    background: $color-four;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: rgba(0,0,0,0.9);
+    transition: all 200ms ease-in-out;
+    text-decoration: none;
+    font-size: 14px !important;
+    &:hover {
+      background: $color-three;
+    }
+  }
+}
+
+#jobApplyFormModal{
+  .modal-header{
+    background: #6bce22;
+    color: #f5ff00;
+  }
+  .btn{
+    font-size: 12px !important;
+  }
+}

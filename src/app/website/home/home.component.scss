@@ -1,0 +1,13 @@
+.carousel{
+    text-align: center;
+    background-color: #fafafa;
+    outline: none !important;
+}
+::ng-deep .carousel-indicators li{
+    height: 5px;
+    background-color: #2368c7 ;
+    opacity: 0.7;
+}
+.carousel-img {
+	width: 100% !important;
+}

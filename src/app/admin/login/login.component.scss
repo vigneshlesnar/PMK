@@ -1,0 +1,249 @@
+/* -- placeholder --*/
+::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #d6d4d4;
+  }
+  ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #d6d4d4;
+  }
+  :-ms-input-placeholder {
+    /* IE 10+ */
+    color: #d6d4d4;
+  }
+  :-moz-placeholder {
+    /* Firefox 18- */
+    color: #d6d4d4;
+  }
+  
+  img {
+    max-width: 100%;
+  }
+  .btn:hover, button:hover {
+    transition: 0.5s ease;
+    -webkit-transition: 0.5s ease;
+    -o-transition: 0.5s ease;
+    -ms-transition: 0.5s ease;
+    -moz-transition: 0.5s ease;
+  }
+  /*-- wrapper start --*/
+  .wrapper {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    .card{
+      padding: 2rem 4rem;
+    }
+  }
+  /*-- form styling --*/
+  .w3l-workinghny-form .logo {
+    text-align: center;
+  }
+  .w3l-workinghny-form .logo a.brand-logo {
+    display: inline-block;
+    text-align: center;
+    font-size: 23px;
+    line-height: 1.1em;
+    margin-bottom: 30px;
+    text-transform: capitalize;
+    letter-spacing: 4px;
+    background: #00000094;
+    color: #fff;
+    font-family: unset;
+    border-radius: 42px;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+  .w3l-workinghny-form .align-end {
+    align-self: flex-end;
+    padding: 2em;
+  }
+  .w3l-workinghny-form .logo a.brand-logo span {
+    font-weight: 800;
+  }
+  .w3l-workinghny-form h1 {
+    font-size: 50px;
+    line-height: 1.1em;
+    font-weight: 700;
+    color: #37713e;
+  }
+  .w3l-workinghny-form {
+    position: relative;
+    z-index: 0;
+    padding: 2em 0px;
+    display: grid;
+    align-items: center;
+    height: 100vh;
+  }
+  .w3l-workinghny-form .pos-relative {
+    position: relative;
+  }
+  .w3l-workinghny-form .copyright {
+    margin-top: 20px;
+  }
+  .w3l-workinghny-form p.copy-footer-29 a {
+    color: #495057;
+  }
+  .w3l-workinghny-form p.copy-footer-29 a:hover {
+    color: #4361ee;
+  }
+  .w3l-workinghny-form h3 {
+    font-size: 26px;
+    color: #38723e;
+    margin-bottom: 15px;
+  }
+  .w3l-workinghny-form .workinghny-block-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    grid-gap: 70px;
+    width: 90%;
+    margin: 0 auto;
+    align-items: center;
+  }
+  .w3l-workinghny-form .login-form-content {
+    padding: 2em 0em;
+  }
+  .w3l-workinghny-form .one-frm label {
+    font-style: normal;
+    font-size: 13px;
+    color: #646b71;
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 400;
+  }
+  .w3l-workinghny-form input {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #38723e;
+    color: #000;
+    background:transparent;
+    font-size: 15px;
+    line-height: 20px;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 30px;
+    border-radius: 0;
+    outline: none;
+  }
+  .w3l-workinghny-form .is-invalid{
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f98a8a;
+  }
+  .w3l-workinghny-form input:focus {
+    background: transparent;
+    border-bottom: 2px solid #719e6f;
+    box-shadow: none;
+  }
+  .w3l-workinghny-form .btn-style {
+    font-size: 18px;
+    color: #fff;
+    width: 100%;
+    background: #719e6f;
+    border: none;
+    height: 55px;
+    font-weight: 700;
+    border-radius: 6px;
+    transition: .3s ease;
+    -webkit-transition: .3s ease;
+    -moz-transition: .3s ease;
+    -ms-transition: .3s ease;
+    -o-transition: .3s ease;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
+  }
+  .w3l-workinghny-form .btn-style:hover {
+    background: #f98a8a;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 6px 0 rgba(0,0,0,0.2);
+  }
+  .w3l-workinghny-form p.already,
+  .w3l-workinghny-form p.already a {
+    font-size: 18px;
+    line-height: 25px;
+    color: #495057;
+    margin: 25px 0 0;
+    text-align: center;
+  }
+  .w3l-workinghny-form p.remember {
+    color: #495057;
+    line-height: 20px
+  }
+  .w3l-workinghny-form p.already a {
+    color: #495057;
+    font-weight: 700;
+  }
+  .w3l-workinghny-form p.already a:hover {
+    color: #4361ee;
+  }
+  .head1 {
+    font-weight: 900;
+    background-color: #f90d0d;
+    background-image: linear-gradient(0deg, #f90d0d 20%, #f5ff00 50%, #2368c7 60%);
+    font-size: 30px;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+  
+  @media (min-width: 576px) {
+    .wrapper {
+        max-width: 540px;
+    }
+  }
+  @media (min-width: 768px) {
+    .wrapper {
+        max-width: 720px;
+    }
+  }
+  @media (min-width: 992px){
+    .wrapper {
+      max-width: 960px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .wrapper {
+        max-width: 1140px;
+    }
+  }
+  
+  /*-- responsive design --*/
+  
+  @media (max-width: 992px) {
+    .w3l-workinghny-form .workinghny-block-grid {
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+        width: 100%;
+    }
+    .w3l-workinghny-form .login-form-content {
+        padding: 0em 0em 2em 0;
+    }
+    .workinghny-left-img {
+        order: 2;
+    }
+    .w3l-workinghny-form .logo a.brand-logo {
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+    .w3l-workinghny-form {
+        height: auto;
+    }
+  }
+  @media (max-width: 667px) {
+    .w3l-workinghny-form .align-end {
+        padding: 0em;
+    }
+  }
+  @media (max-width: 480px) {
+    .w3l-workinghny-form .logo a.brand-logo {
+        font-size: 20px;
+    }
+    .w3l-workinghny-form h3 {
+        font-size: 18px;
+    }
+  }
+  @media (max-width: 415px) {
+    .w3l-workinghny-form .copyright {
+        margin-top: 30px;
+    }
+  }

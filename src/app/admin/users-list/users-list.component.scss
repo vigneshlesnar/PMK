@@ -1,0 +1,36 @@
+.main-body {
+    padding: 15px;
+}
+.breadcrumb{
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.52) !important;
+    justify-content: space-between;
+}
+.table thead th{
+    font-size: 14px;
+}
+.table tbody td{
+    font-size: 14px;
+}
+.modal-header{
+    background: #71a94f;
+    color: #fff;
+    border-bottom-color : #04360b;
+}
+.block-ellipsis {
+    display: block;
+    display: -webkit-box;
+    max-width: 100%;
+    height: 43px;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 1;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+@media (max-width: 400px) {
+    .breadcrumb{
+        justify-content: center !important;
+    }
+}

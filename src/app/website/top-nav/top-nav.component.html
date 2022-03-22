@@ -1,0 +1,32 @@
+
+<nav class="navbar navbar-expand-md navbar-light px-2">
+	<div class="py-0 row mx-0 w-100">
+		<div class="col-10 px-0 row mx-0">
+			<div class="company-logo">
+				<img src="./assets/img/Pattali-Makkal-Katchi-logo.png" alt="">
+			</div>
+			<span class="company-name align-self-center">அருள்இராமதாஸிடம் சொல்லுங்கள்</span>
+		</div>
+		<div class="col-2 px-0 align-self-center">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+		</div>
+	</div>	
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav ml-auto py-4 py-md-0">
+			<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4" [class.active]="(activeFragment | async) === 'home' || (activeFragment | async) === ''">
+				<a class="nav-link" routerLink="/" fragment="">Home</a>
+			</li>
+			<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4" [class.active]="(activeFragment | async) === 'jobs'">
+				<a class="nav-link" routerLink="./" fragment="jobs">Job</a>
+			</li>
+			<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4" [class.active]="(activeFragment | async) === 'services'">
+				<a class="nav-link" routerLink="./" fragment="services">Services</a>
+			</li>
+			<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4" [class.active]="(activeFragment | async) === 'contactus'">
+				<a class="nav-link" routerLink="./" fragment="contactus">Contact</a>
+			</li>
+		</ul>
+	</div>
+</nav>		

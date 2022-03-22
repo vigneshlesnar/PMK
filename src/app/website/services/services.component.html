@@ -1,0 +1,407 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-4 col-sm-12">
+      <div class="serviceBox blue">
+        <div class="service-icon">
+          <i class="fa fa-inr"></i>
+        </div>
+        <h4 class="title">
+          OLD AGE PENSION /
+          <hr class="my-2">
+          முதியோர் ஓய்வூதியம்
+        </h4>
+        <p class="description">
+          உங்கள் முதியோர் ஓய்வூதிய தொகையை உங்கள் அனுமதியுடன் பெற்றுத்தர நாங்கள் இங்கு தயாராக உள்ளோம்.
+        </p>
+        <a class="btn" (click)="openServiceNeededModal('old_age_pensions')">Apply / விண்ணப்பிக்கவும்</a>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <div class="serviceBox green">
+        <div class="service-icon">
+          <i class="fa fa-wheelchair"></i>
+        </div>
+        <h4 class="title">
+          HANDICAP HELPING FUND /
+          <hr class="my-2">
+          ஊனமுற்றோர் உதவி நிதி
+        </h4>
+        <p class="description">
+          ஊனமுற்றோர் உதவி நிதியைப் பெற இங்கே விண்ணப்பிக்கவும், ஏனெனில் அதைப் பெற நாங்கள் உதவி செய்கிறோம்
+        </p>
+        <a class="btn" (click)="openServiceNeededModal('handicap_helping_funds')">Apply / விண்ணப்பிக்கவும்</a>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <div class="serviceBox red">
+        <div class="service-icon">
+          <i class="fa fa-exclamation-triangle"></i>
+        </div>
+        <h4 class="title">
+          AREA ISSUES /
+          <hr class="my-2">
+          தொகுதி பிரச்சினைகள்
+        </h4>
+        <p class="description">
+          உங்களின் இடத்தில் உள்ள அனைத்து சிக்கல்களையும் கூறுங்கள், அதற்கான தீர்வை நாங்கள் இங்கே பெற்று தருகிறோம்.
+        </p>
+        <a class="btn" (click)="openServiceNeededModal('area_problems')">Apply / விண்ணப்பிக்கவும்</a>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <div class="serviceBox blue">
+        <div class="service-icon">
+          <i class="fa fa-medkit"></i>
+        </div>
+        <h4 class="title">
+          MEDICAL NEEDS /
+          <hr class="my-2">
+          மருத்துவ உதவிகள்
+        </h4>
+        <p class="description">
+          உங்களுக்கு தேவையான மருத்துவ வசதிகள் அனைத்தையும் செய்து தர நாங்கள் இங்கு எப்போதும் தயாராக உள்ளோம்.
+        </p>
+        <a class="btn" (click)="openServiceNeededModal('medical_needs')">Apply / விண்ணப்பிக்கவும்</a>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <div class="serviceBox red">
+        <div class="service-icon">
+          <i class="fa fa-certificate"></i>
+        </div>
+        <h4 class="title">
+          GOVERNMENT CERTIFICATES /
+          <hr class="my-2">
+          அரசாங்க சான்றிதழ்கள்
+        </h4>
+        <p class="description">
+          உங்களுக்கு தேவையான எவ்வித அரசாங்க சான்றிதழ்களையும் பெற்றுத்தர நாங்கள் இங்கு எப்போதும் தயாராக உள்ளோம்.
+        </p>
+        <a class="btn" (click)="openServiceNeededModal('government_certificates')">Apply / விண்ணப்பிக்கவும்</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade pr-0" id="serviceNeededModal" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" *ngIf="serviceNeededForm">
+      <div class="modal-header py-2">
+        <h5 class="modal-title">{{serviceModalFormTitle}}</h5>
+        <button type="button" class="close" (click)="closeModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" [formGroup]="serviceNeededForm">
+        <div class="form-row">
+          <!-- User Name Input -->
+          <div class="form-group col-md-12">
+            <div class="controls">
+              <div class="input-prepend input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fa fa-user"></i>
+                  </span>
+                </div>
+                <input type="text" class="form-control" formControlName="userName" placeholder="User Name / பயனர் பெயர்"
+                  autocomplete="off"
+                  [ngClass]="{ 'is-invalid': formSubmitted && f.userName.errors, 'is-valid' : formSubmitted && !f.userName.errors }">
+              </div>
+            </div>
+            <span *ngIf="formSubmitted && f.userName.errors"
+              [ngClass]="{ 'd-block': formSubmitted && f.userName.errors }" class="invalid-feedback text-right">
+              <p *ngIf="f.userName.errors.required">user name is required</p>
+            </span>
+          </div>
+        </div>
+        <div class="form-row">
+          <!-- User Address Field -->
+          <div class="form-group col-md-12">
+            <div class="controls">
+              <div class="input-prepend input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fa fa-address-card"></i>
+                  </span>
+                </div>
+                <input type="text" class="form-control" formControlName="userAddress"
+                  placeholder="User address / பயனர் முகவரி" autocomplete="off"
+                  [ngClass]="{ 'is-invalid': formSubmitted && f.userAddress.errors, 'is-valid' : formSubmitted && !f.userAddress.errors }">
+              </div>
+            </div>
+            <div *ngIf="formSubmitted && f.userAddress.errors"
+              [ngClass]="{ 'd-block': formSubmitted && f.userAddress.errors }" class="invalid-feedback text-right">
+              <div *ngIf="f.userAddress.errors.required">user address is required</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <!--User Mobile Input Numbers Only Directive Used On This Input -->
+          <div class="form-group col-md-12">
+            <div class="controls">
+              <div class="input-prepend input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fa fa-phone"></i>
+                  </span>
+                </div>
+                <input type="text" class="form-control" formControlName="userMobile"
+                  placeholder="User phone number / பயனர் தொலைபேசி எண்" minlength="10" maxlength="10" autocomplete="off"
+                  numbersOnly
+                  [ngClass]="{ 'is-invalid': formSubmitted && f.userMobile.errors, 'is-valid' : formSubmitted && !f.userMobile.errors }">
+              </div>
+            </div>
+            <span *ngIf="formSubmitted && f.userMobile.errors"
+              [ngClass]="{ 'd-block': formSubmitted && f.userMobile.errors }" class="invalid-feedback text-right">
+              <p *ngIf="f.userMobile.errors.required">user mobile is required</p>
+              <p *ngIf="f.userMobile.errors.pattern">user mobile is invalid number</p>
+            </span>
+          </div>
+        </div>
+        <div class="form-row" *ngIf="petitionType!='area_problems'">
+          <!-- User Age Field -->
+          <div class="form-group col-md-12">
+            <div class="controls">
+              <div class="input-prepend input-group date-picker">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fa fa-line-chart"></i>
+                  </span>
+                </div>
+                <input class="form-control" type="text" numbersOnly formControlName="userAge"
+                  placeholder="User age / பயனர் வயது"
+                  [ngClass]="{ 'is-invalid': formSubmitted && f.userAge.errors, 'is-valid' : formSubmitted && !f.userAge.errors }">
+                <div *ngIf="formSubmitted && f.userAge.errors"
+                  [ngClass]="{ 'd-block': formSubmitted && f.userAge.errors }" class="invalid-feedback text-right">
+                  <div *ngIf="f.userAge.errors.required">user age is required</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-row" *ngIf="petitionType=='government_certificates'">
+          <!-- User Age Field -->
+          <div class="form-group col-md-12">
+            <div class="controls">
+              <div class="input-prepend input-group date-picker">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fa fa-id-card-o"></i>
+                  </span>
+                </div>
+                <input class="form-control" type="text" formControlName="certificateType"
+                  placeholder="certificate type / சான்றிதழ் வகை"
+                  [ngClass]="{ 'is-invalid': formSubmitted && f.certificateType.errors, 'is-valid' : formSubmitted && !f.certificateType.errors }">
+                <div *ngIf="formSubmitted && f.certificateType.errors"
+                  [ngClass]="{ 'd-block': formSubmitted && f.certificateType.errors }"
+                  class="invalid-feedback text-right">
+                  <div *ngIf="f.certificateType.errors.required">certificate type is required</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-row" *ngIf="petitionType=='medical_needs'">
+          <!-- User Age Field -->
+          <div class="form-group col-md-12">
+            <div class="controls">
+              <div class="input-prepend input-group date-picker">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fa fa-plus-square"></i>
+                  </span>
+                </div>
+                <input class="form-control" type="text" formControlName="disease"
+                  placeholder="Name of the disease / நோயின் பெயர்"
+                  [ngClass]="{ 'is-invalid': formSubmitted && f.disease.errors, 'is-valid' : formSubmitted && !f.disease.errors }">
+                <div *ngIf="formSubmitted && f.disease.errors"
+                  [ngClass]="{ 'd-block': formSubmitted && f.disease.errors }" class="invalid-feedback text-right">
+                  <div *ngIf="f.disease.errors.required">disease name is required</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-row" *ngIf="petitionType=='area_problems'">
+          <!-- User Ward Field -->
+          <div class="form-group col-md-12">
+            <div class="controls">
+              <div class="input-prepend input-group date-picker">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fa fa-krw"></i>
+                  </span>
+                </div>
+                <input class="form-control" type="text" numbersOnly formControlName="userWard"
+                  placeholder="User ward / பயனர் வார்டு"
+                  [ngClass]="{ 'is-invalid': formSubmitted && f.userWard.errors, 'is-valid' : formSubmitted && !f.userWard.errors }">
+                <div *ngIf="formSubmitted && f.userWard.errors"
+                  [ngClass]="{ 'd-block': formSubmitted && f.userWard.errors }" class="invalid-feedback text-right">
+                  <div *ngIf="f.userWard.errors.required">user ward number is required</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- User Ward Field -->
+          <div class="form-group col-md-12">
+            <div class="controls">
+              <div class="input-prepend input-group date-picker">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fa fa-home"></i>
+                  </span>
+                </div>
+                <input class="form-control" type="text" formControlName="userPanchayat"
+                  placeholder="User panchayat / பயனர் பஞ்சாயத்து"
+                  [ngClass]="{ 'is-invalid': formSubmitted && f.userPanchayat.errors, 'is-valid' : formSubmitted && !f.userPanchayat.errors }">
+                <div *ngIf="formSubmitted && f.userPanchayat.errors"
+                  [ngClass]="{ 'd-block': formSubmitted && f.userPanchayat.errors }"
+                  class="invalid-feedback text-right">
+                  <div *ngIf="f.userPanchayat.errors.required">user panchayat is required</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- User Ward Field -->
+          <div class="form-group col-md-12">
+            <div class="controls">
+              <div class="input-prepend input-group date-picker">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fa fa-map-marker"></i>
+                  </span>
+                </div>
+                <input class="form-control" type="text" formControlName="userTaluk"
+                  placeholder="User Taluk / பயனர் தாலுகா"
+                  [ngClass]="{ 'is-invalid': formSubmitted && f.userTaluk.errors, 'is-valid' : formSubmitted && !f.userTaluk.errors }">
+                <div *ngIf="formSubmitted && f.userTaluk.errors"
+                  [ngClass]="{ 'd-block': formSubmitted && f.userTaluk.errors }" class="invalid-feedback text-right">
+                  <div *ngIf="f.userTaluk.errors.required">user taluk is required</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Issues type select Field -->
+          <div class="form-group col-md-12">
+            <div class="controls">
+              <div class="input-prepend input-group date-picker">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fa fa-exclamation"></i>
+                  </span>
+                </div>
+                <select class="form-control" formControlName="issueType" (change)="changeIssueTypes($event.target)"
+                  [ngClass]="{ 'is-invalid': formSubmitted && f.issueType.errors, 'is-valid' : formSubmitted && !f.issueType.errors }">
+                  <option value="" disabled hidden selected>Type of issue / சிக்கல் வகை</option>
+                  <option value="Water problem/தண்ணீர் பிரச்சனைகள்">
+                    Water problem / தண்ணீர் பிரச்சனைகள்
+                  </option>
+                  <option value="Sewer issues/சாக்கடை பிரச்சனைகள்">
+                    Sewer issues / சாக்கடை பிரச்சனைகள்
+                  </option>
+                  <option value="Cleaning and sanitation/சுத்தம் மற்றும் சுகாதாரம்">
+                    Cleaning and sanitation / சுத்தம் மற்றும் சுகாதாரம்
+                  </option>
+                  <option value="Road problems/சாலை பிரச்சனைகள்">
+                    Road problems / சாலை பிரச்சனைகள்
+                  </option>
+                  <option value="others/இதர">
+                    Others / இதர
+                  </option>
+                </select>
+                <div *ngIf="formSubmitted && f.issueType.errors"
+                  [ngClass]="{ 'd-block': formSubmitted && f.issueType.errors }" class="invalid-feedback text-right">
+                  <div *ngIf="f.issueType.errors.required">user taluk is required</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- problem description Field -->
+          <div class="form-group col-md-12">
+            <div class="controls">
+              <div class="input-prepend input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fa fa-info-circle"></i>
+                  </span>
+                </div>
+                <input type="text" class="form-control" formControlName="problemDescription"
+                  placeholder="problem description / பிரச்சனை விபரம்" autocomplete="off"
+                  [ngClass]="{ 'is-invalid': formSubmitted && f.problemDescription.errors, 'is-valid' : formSubmitted && !f.problemDescription.errors }">
+              </div>
+            </div>
+            <div *ngIf="formSubmitted && f.problemDescription.errors"
+              [ngClass]="{ 'd-block': formSubmitted && f.problemDescription.errors }"
+              class="invalid-feedback text-right">
+              <div *ngIf="f.problemDescription.errors.required">problem description is required</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-row mx-0 text-center col-12 my-2">
+          <img (click)="fileInputOne.click()" src="./assets/img/upload-aadhar.png" width="78px"
+            class="file-upload-img cursor-pointer">
+          <input #fileInputOne type="file" class="d-none" accept="image/*" (change)="showPreview($event,'aadharCard')">
+          <p class="text-secondary mx-2 align-self-center ">
+            <small>
+              {{ this.aadharCardName ? aadharCardName : 'Please upload aadhar card' }}
+            </small>
+          </p>
+          <span *ngIf="formSubmitted && f.aadharCard.errors"
+            [ngClass]="{ 'd-block': formSubmitted && f.aadharCard.errors }" class="invalid-feedback text-center">
+            <p *ngIf="f.aadharCard.errors.required">user aadhar card is required</p>
+          </span>
+        </div>
+        <div class="form-row mx-0 text-center col-12 my-2">
+          <img (click)="fileInputTwo.click()" src="./assets/img/upload-smar-card.png" width="78px"
+            class="file-upload-img cursor-pointer">
+          <input #fileInputTwo type="file" class="d-none" accept="image/*" (change)="showPreview($event,'rationCard')">
+          <p class="text-secondary mx-2 align-self-center">
+            <small>
+              {{ this.rationCardName ? rationCardName : 'Please upload smart card' }}
+            </small>
+          </p>
+          <span *ngIf="formSubmitted && f.rationCard.errors"
+            [ngClass]="{ 'd-block': formSubmitted && f.rationCard.errors }" class="invalid-feedback text-center">
+            <p *ngIf="f.rationCard.errors.required">user smart card is required</p>
+          </span>
+        </div>
+        <div class="form-row mx-0 text-center col-12 my-2">
+          <img (click)="fileInputThree.click()" src="./assets/img/upload-voterid.png" width="78px"
+            class="file-upload-img cursor-pointer">
+          <input #fileInputThree type="file" class="d-none" accept="image/*" (change)="showPreview($event,'voterId')">
+          <p class="text-secondary mx-2 align-self-center">
+            <small>
+              {{ this.voterIdName ? voterIdName : 'Please upload voter id' }}
+            </small>
+          </p>
+          <span *ngIf="formSubmitted && f.voterId.errors" [ngClass]="{ 'd-block': formSubmitted && f.voterId.errors }"
+            class="invalid-feedback text-center">
+            <p *ngIf="f.voterId.errors.required">user voter id is required</p>
+          </span>
+        </div>
+        <div class="form-row mx-0 text-center col-12 my-2">
+          <img (click)="fileInputFour.click()" src="./assets/img/upload-licence.png" width="78px"
+            class="file-upload-img cursor-pointer">
+          <input #fileInputFour type="file" class="d-none" accept="image/*"
+            (change)="showPreview($event,'drivingLicence')">
+          <p class="text-secondary mx-2 align-self-center">
+            <small>
+              {{ this.drvingLicenceName ? drvingLicenceName : 'Please upload drving licence' }}
+            </small>
+          </p>
+        </div>
+        <div>
+          <p class="text-muted text-center border rounded">
+            <small>Note: Your uploaded file should be less than 2 MB</small>
+          </p>
+        </div>
+      </div>
+      <div class="modal-footer py-2">
+        <button type="button" class="btn btn-outline-danger py-1" (click)="closeModal()">Close</button>
+        <button type="button" class="btn btn-outline-success py-1" [disabled]="isDisabled"
+          (click)="sendServiceRequest()">Apply</button>
+      </div>
+    </div>
+  </div>

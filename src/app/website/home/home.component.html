@@ -1,0 +1,13 @@
+<div class="" style="max-width: 100vw;">
+    <div class="row mx-0">
+      <div class="col-md-12 px-0">
+        <ngb-carousel #carousel [interval]="3000" [pauseOnHover]="true" [pauseOnFocus]="true">
+          <ng-template ngbSlide *ngFor="let banner of bannerImages">
+            <img [src]="banner.img" alt="Random slide" class="carousel-img">
+            <div class="carousel-caption">
+            </div>
+          </ng-template>
+        </ngb-carousel>
+      </div>
+    </div>
+  </div>

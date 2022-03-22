@@ -1,0 +1,197 @@
+<div class="row mx-0">
+  <div class="col-md-4">
+    <div class="card">
+      <div class="title">
+        Youth job opportunities / <br>
+        இளைஞர் வேலை வாய்ப்புகள்
+      </div>
+      <div class="icon">
+        <img src="./assets/img/youth_jobs.png" alt="" width="100px">
+      </div><!--/icon-->
+      <a class="btn" (click)="openJobApplyFormModal('youth_jobs')">Apply / விண்ணப்பிக்கவும்</a>
+    </div><!--/card-->
+  </div>
+  <div class="col-md-4">
+    <div class="card">
+      <div class="title">
+        Self job opportunities / <br>
+        சுய வேலை வாய்ப்புகள்
+      </div>
+      <div class="icon">
+        <img src="./assets/img/self_jobs.png" alt="" width="100px">
+      </div><!--/icon-->
+      <a class="btn" (click)="openJobApplyFormModal('self_jobs')">Apply / விண்ணப்பிக்கவும்</a>
+    </div><!--/card-->
+  </div>
+  <div class="col-md-4">
+    <div class="card">
+      <div class="title">
+        Other job opportunities / <br>
+        இதர வேலை வாய்ப்புகள்
+      </div>
+      <div class="icon">
+        <img src="./assets/img/other_jobs.png" alt="" width="100px">
+      </div><!--/icon--> 
+      <a class="btn" (click)="openJobApplyFormModal('other_jobs')">Apply / விண்ணப்பிக்கவும்</a>
+    </div><!--/card-->
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade pr-0" id="jobApplyFormModal" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header py-2">
+        <h5 class="modal-title">{{jobModalFormTitle}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body"  *ngIf="jobApplyForm"  [formGroup]="jobApplyForm">
+        <div class="form-row">
+          <!-- User Name Input -->
+          <div class="form-group col-md-12">
+              <div class="controls">
+                  <div class="input-prepend input-group">
+                      <div class="input-group-prepend">
+                          <span class="input-group-text">
+                              <i class="fa fa-user"></i>
+                          </span>
+                      </div>
+                      <input type ="text" class="form-control" formControlName="userName" placeholder="User Name / பயனர் பெயர்" autocomplete="off"  [ngClass]="{ 'is-invalid': formSubmitted && f.userName.errors, 'is-valid' : formSubmitted && !f.userName.errors }">
+                  </div>
+              </div>
+              <span *ngIf="formSubmitted && f.userName.errors"  [ngClass]="{ 'd-block': formSubmitted && f.userName.errors }" class="invalid-feedback text-right">
+                  <p *ngIf="f.userName.errors.required">user name is required</p>
+              </span>                         
+          </div> 
+      </div>  
+      <div class="form-row">
+          <!-- User Date of Birth Field -->                   
+          <div class="form-group col-md-12">
+              <div class="controls">
+                  <div class="input-prepend input-group date-picker">
+                      <div class="input-group-prepend">
+                          <span class="input-group-text">
+                              <i class="fa fa-birthday-cake"></i> 
+                          </span>
+                      </div>
+                      <input class="form-control" type="date" formControlName="userDOB" max="{{todayDate}}"  placeholder="Choose a date" [ngClass]="{ 'is-invalid': formSubmitted && f.userDOB.errors, 'is-valid' : formSubmitted && !f.userDOB.errors }">
+                      <div *ngIf="formSubmitted && f.userDOB.errors" [ngClass]="{ 'd-block': formSubmitted && f.userDOB.errors }" class="invalid-feedback text-right">
+                          <div *ngIf="f.userDOB.errors.required">user date of birth is required</div>
+                      </div>                                       
+                  </div>
+              </div>
+          </div>
+          <!-- User Age Field -->                   
+          <div class="form-group col-md-12">
+            <div class="controls">
+                <div class="input-prepend input-group date-picker">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fa fa-line-chart"></i> 
+                        </span>
+                    </div>
+                    <input class="form-control" type="text" numbersOnly  formControlName="userAge"  placeholder="User age / பயனர் வயது" [ngClass]="{ 'is-invalid': formSubmitted && f.userAge.errors, 'is-valid' : formSubmitted && !f.userAge.errors }">
+                    <div *ngIf="formSubmitted && f.userAge.errors" [ngClass]="{ 'd-block': formSubmitted && f.userAge.errors }" class="invalid-feedback text-right">
+                        <div *ngIf="f.userAge.errors.required">user age is required</div>
+                    </div>                                       
+                </div>
+            </div>
+        </div>                                      
+      </div>
+      <div class="form-row">
+        <!-- User Qualification Field -->
+        <div class="form-group col-md-12">
+          <div class="controls">
+                  <div class="input-prepend input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">
+                              <i class="fa fa-graduation-cap"></i>
+                          </span>
+                        </div>
+                      <input type="text" class="form-control" formControlName="userQualification" placeholder="User qualification / பயனர் தகுதி" autocomplete="off" [ngClass]="{ 'is-invalid': formSubmitted && f.userQualification.errors, 'is-valid' : formSubmitted && !f.userQualification.errors }">
+                    </div>
+                  </div>
+                  <span *ngIf="formSubmitted && f.userQualification.errors"  [ngClass]="{ 'd-block': formSubmitted && f.userQualification.errors }" class="invalid-feedback text-right">
+                    <p *ngIf="f.userQualification.errors.required">user qualification is required</p>
+              </span>                               
+          </div>        
+          <!-- User Address Field -->                        
+          <div class="form-group col-md-12">
+              <div class="controls">
+                <div class="input-prepend input-group">
+                  <div class="input-group-prepend">                        
+                    <span class="input-group-text">
+                      <i class="fa fa-address-card"></i>
+                    </span>
+                  </div>
+                  <input type="text" class="form-control" formControlName="userAddress" placeholder="User address / பயனர் முகவரி" autocomplete="off" [ngClass]="{ 'is-invalid': formSubmitted && f.userAddress.errors, 'is-valid' : formSubmitted && !f.userAddress.errors }">
+                </div>
+              </div>
+              <div *ngIf="formSubmitted && f.userAddress.errors" [ngClass]="{ 'd-block': formSubmitted && f.userAddress.errors }" class="invalid-feedback text-right">
+                <div *ngIf="f.userAddress.errors.required">user address is required</div>
+              </div>                            
+            </div>
+          </div>
+          <div class="form-row">
+              <!--User Mobile Input Numbers Only Directive Used On This Input -->
+              <div class="form-group col-md-12">
+                  <div class="controls">
+                      <div class="input-prepend input-group">
+                          <div class="input-group-prepend">
+                              <span class="input-group-text">
+                                  <i class="fa fa-phone"></i>
+                              </span>
+                          </div>
+                          <input type="text" class="form-control" formControlName="userMobile" placeholder="User phone number / பயனர் தொலைபேசி எண்" minlength="10" maxlength="10" autocomplete="off" numbersOnly  [ngClass]="{ 'is-invalid': formSubmitted && f.userMobile.errors, 'is-valid' : formSubmitted && !f.userMobile.errors }">
+                      </div>
+                  </div>
+                  <span *ngIf="formSubmitted && f.userMobile.errors"  [ngClass]="{ 'd-block': formSubmitted && f.userMobile.errors }" class="invalid-feedback text-right">
+                      <p *ngIf="f.userMobile.errors.required">user mobile is required</p>
+                      <p *ngIf="f.userMobile.errors.pattern">user mobile is invalid number</p>
+                  </span>                                                    
+              </div>                       
+              <!-- Uppercase to Lowercase Directive Used On This Input -->
+              <div class="form-group col-md-12" *ngIf="petitionType=='youth_jobs'">
+                  <div class="controls">
+                      <div class="input-prepend input-group">
+                          <div class="input-group-prepend">
+                              <span class="input-group-text">
+                                  <i class="fa fa-envelope"></i>
+                              </span>
+                          </div>
+                          <input type="text" class="form-control" formControlName="userEmail" placeholder="User Mail address / பயனர் மின்னஞ்சல் முகவரி" autocomplete="off" lowercase [ngClass]="{ 'is-invalid': formSubmitted && f.userEmail.errors, 'is-valid' : formSubmitted && !f.userEmail.errors }">
+                      </div>
+                  </div>
+                  <span *ngIf="formSubmitted && f.userEmail.errors"  [ngClass]="{ 'd-block': formSubmitted && f.userEmail.errors }" class="invalid-feedback text-right">
+                      <p *ngIf="f.userEmail.errors.required">user email is required</p>
+                      <p *ngIf="f.userEmail.errors.pattern">user email is invalid address</p>
+                  </span>                             
+              </div> 
+          </div>
+          <!-- User Resume Field -->                   
+          <div class="form-group text-center"> 
+            <img (click)="fileInput.click()" src="./assets/img/upload-resume.png" width="50px" class="cursor-pointer">           
+            <input #fileInput type="file"class="d-none" accept="application/pdf,application/msword" (change)="showPreview($event)">
+            <p class="text-secondary">
+              <small>
+                {{ f.userResume.value ? resumeFileName : 'No files found' }}
+              </small>
+            </p>
+            <span *ngIf="formSubmitted && f.userResume.errors"  [ngClass]="{ 'd-block': formSubmitted && f.userResume.errors }" class="invalid-feedback text-center">
+              <p *ngIf="f.userResume.errors.required">user resume is required</p>
+            </span>              
+          </div>
+          <div>
+            <p class="text-muted text-center border rounded ">
+              <small>Note: Your uploaded file should be less than 1 MB</small>
+            </p>
+          </div>
+      </div>
+    <div class="modal-footer py-2">
+      <button type="button" class="btn btn-outline-danger py-1" data-dismiss="modal">Close</button>
+      <button type="button" class="btn btn-outline-success py-1" [disabled]="isDisabled" (click)="applyJobs()">Apply</button>
+    </div>
+  </div>
+</div>

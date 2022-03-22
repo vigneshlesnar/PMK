@@ -1,0 +1,163 @@
+button {
+  overflow: visible;
+}
+button, select {
+  text-transform: none;
+}
+button, input, select, textarea {
+  color: #5A5A5A;
+  font: inherit;
+  margin: 0;
+}
+input {
+  line-height: normal;
+}
+textarea {
+  overflow: auto;
+}
+.contact-form {
+  border: solid 3px #6bce22;
+  background-color: #e0fdcc;
+  width: 100%;
+  max-width: 768px;
+  position: relative;
+}
+form {
+  padding: 10px 30px;
+  margin: 10px 0;
+}
+.icon_wrapper {
+  margin: 25px auto 0;
+  width: 100%;
+}
+.icon {
+  display: block;
+  fill: #f48657;
+  height: 50px;
+  margin: 0 auto;
+  width: 50px;
+}
+.email {
+	float: right;
+	width: 45%;
+}
+.name, .email, .message, .telephone{
+	margin: 0em 0 1.875em 0;
+}
+input[type='text'], [type='email'], select, textarea {
+	background: none;
+  border: none;
+  border-bottom: solid 2px #6bce22;
+	font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1px;
+	padding: 0 0 0.875em 0;
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+input[type='text'],select, textarea {
+  text-transform: uppercase;
+}
+input[type='text']:focus, [type='email']:focus, textarea:focus {
+	outline: none;
+	padding: 0 0 0.875em 0;
+}
+.message {
+	float: none;
+}
+.name {
+	float: left;
+	width: 45%;
+}
+select {
+  background: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-down-32.png') no-repeat right;
+  outline: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+select::-ms-expand {
+  display: none;
+}
+.subject {
+  width: 100%;
+}
+.telephone {
+  width: 100%;
+}
+textarea {
+	line-height: 150%;
+	height: 150px;
+	resize: none;
+  width: 100%;
+}
+::-webkit-input-placeholder {
+	color: #474544;
+}
+:-moz-placeholder { 
+	color: #474544;
+	opacity: 1;
+}
+::-moz-placeholder {
+	color: #474544;
+	opacity: 1;
+}
+:-ms-input-placeholder {
+	color: #474544;
+}
+#form_button {
+    background: none;
+    border: solid 2px #6bce22;
+    color: #f48657;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Helvetica", Arial, sans-serif;
+    font-size: 0.875em;
+    font-weight: bold;
+    outline: none;
+    padding: 15px 30px;
+    border-radius: 6px;
+    text-transform: uppercase;
+  -webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+#form_button:hover {
+    background: #9dba88;
+    color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+    .name {
+	    float: initial;
+	    width: 100%;
+    }
+    .email {
+	    float: initial;
+	    width: 100%;
+    }
+}
+@media screen and (max-width: 480px) {
+  #form_button {
+    padding: 15px 25px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .icon {
+    height: 35px;
+    width: 35px;
+  }
+  input[type='text'], [type='email'], select, textarea {
+    font-size: 0.875em;
+  }
+}
